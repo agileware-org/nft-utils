@@ -4,10 +4,10 @@ import { readFileSync, writeFileSync } from "fs";
 import { ethers } from "ethers";
 
 const { get } = deployments;
-const contracts:{[name: string]: string} = {};
-const roles:{[name: string]: string} = {};
+const contracts: { [name: string]: string } = {};
+const roles: { [name: string]: string } = {};
 
-async function addressOf(contract:string) {
+async function addressOf(contract: string) {
   const deployment = await get(contract);
   contracts[contract] = deployment.address;
 }

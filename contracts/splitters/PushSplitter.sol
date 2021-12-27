@@ -6,15 +6,17 @@
  * 
  * Made with 🧡 by Kreation.tech
  */
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.9;
 
 
 import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import {Address} from "@openzeppelin/contracts/utils/Address.sol";
+import {AddressUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
+import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 
 import "./ISplitter.sol";
 
 contract PushSplitter is Initializable, ISplitter {
+    
     address[] internal _payees;
     mapping(address => uint16) internal _shares;
     
@@ -49,7 +51,18 @@ contract PushSplitter is Initializable, ISplitter {
         uint256 value = address(this).balance;
         for (uint i = 0; i < _payees.length; i++) {
             uint256 amount = value * _shares[_payees[i]] / 10_000;
-            Address.sendValue(payable(_payees[i]), amount);
+            AddressUpgradeable.sendValue(payable(_payees[i]), amount);
         }
+    }
+
+    function transferTo(address from, address payable to, uint16 amount) external {
+        require(_shares[from] > 0, "Splitter: no shares to transfer");
+        require(amount == 0 || _shares[from] >= amount, "Splitter: exceeding transfer");
+        uint16 transfer = _shares[from];
+        if (amount > 0 && amount < transfer) {
+            transfer = amount;
+        }
+        _shares[to] += transfer;
+        _shares[from] -= transfer;
     }
 }

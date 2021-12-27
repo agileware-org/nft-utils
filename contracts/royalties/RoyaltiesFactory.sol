@@ -7,13 +7,12 @@
  * Made with 🧡 by Kreation.tech
  */
 
-pragma solidity 0.8.9;
+pragma solidity ^0.8.9;
 
 import {ClonesUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/ClonesUpgradeable.sol";
 import {CountersUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
 import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
-import {Address} from "@openzeppelin/contracts/utils/Address.sol";
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {AddressUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
 import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 import "./IRoyalties.sol";
@@ -35,36 +34,39 @@ contract RoyaltiesFactory is OwnableUpgradeable {
     /**
      * Initializes the factory with the address of the implementation contract template
      * 
-     * @param splitterType type of royalties
+     * @param royaltiesType type of royalties
      * @param implementation IRoyalties implementation contract to clone
      */
     function addRoyaltiesType(bytes32 royaltiesType, address implementation) external onlyOwner {
-        require(Address.isContract(implementation), "Mot a contract");
+        require(AddressUpgradeable.isContract(implementation), "Mot a contract");
         require(_implementations[royaltiesType] == address(0x0), "Splitter type already defined");
         _implementations[royaltiesType] = implementation;
         emit AddedRoyaltiesType(royaltiesType, msg.sender, implementation);
     }
     
-    function create(bytes32 royaltiesType, address _recipient, uint32 _bps, bytes32[] memory _data) public returns (address) {
-        require(_typeId < implementations.length, "Invalid typeId");
-        require(_recipient != address(0x0), "Invalid recipient");
+    function create(bytes32 royaltiesType, address recipient, uint16 bps, bytes32[] memory data) public returns (address) {
+        require(_implementations[royaltiesType] != address(0x0), "Invalid royaltiesType");
+        require(recipient != address(0x0), "Invalid recipient");
         uint256 id = _counter.current();
-        address newContract = ClonesUpgradeable.cloneDeterministic(implementations[royaltiesType], bytes32(abi.encodePacked(id)));
+        address implementation = ClonesUpgradeable.cloneDeterministic(_implementations[royaltiesType], bytes32(abi.encodePacked(id)));
         
-        IRoyalties(newContract).initialize(_recipient, _bps, _data);
-        emit CreatedRoyalties(id, msg.sender, newContract);
+        IRoyalties(implementation).initialize(recipient, bps, data);
+        emit CreatedRoyalties(id, royaltiesType, msg.sender, implementation);
         _counter.increment();
-        return newContract;
+        return implementation;
     }
 
     /**
      * Gets an edition given the created ID
      * 
-     * @param _typeId id of edition to get contract for
-     * @return IRoyalties template implementation
+     * @param royaltiesType the type identifier of the royalties to retrieve
+     * @param index the id of the royalties to retrieve
+     * @return IRoyalties implementation
      */
     function get(bytes32 royaltiesType, uint256 index) external view returns (IRoyalties) {
-        return IRoyalties(payable(Clones.predictDeterministicAddress(_implementations[royaltiesType], bytes32(abi.encodePacked(index)), address(this))));
+        return IRoyalties(
+            ClonesUpgradeable.predictDeterministicAddress(
+                _implementations[royaltiesType], bytes32(abi.encodePacked(index)), address(this)));
     }
     
     /**
@@ -75,15 +77,15 @@ contract RoyaltiesFactory is OwnableUpgradeable {
      * @param creator the address creating the royalties contract
      * @param contractAddress the address of the newly created royalties contract
      */
-    event CreatedRoyalties(uint256 indexed id, uint256 indexed typeId, address indexed creator, address contractAddress);
+    event CreatedRoyalties(uint256 indexed id, bytes32 indexed typeId, address indexed creator, address contractAddress);
 
     /**
-     * Emitted when a royalties is created reserving the corresponding id.
+     * Emitted when a royalties type is added.
      * 
-     * @param id the identifier of the newly created royalties
-     * @param creator the address creating the royalties contract
-     * @param contractAddress the address of the newly created royalties contract
+     * @param royaltiesType the identifier of the newly created royalties
+     * @param creator the address adding the royalties template
+     * @param contractAddress the address of the added template contract
      */
-    event AddedRoyaltiesType(uint256 indexed id, address indexed creator, address contractAddress);
+    event AddedRoyaltiesType(bytes32 indexed royaltiesType, address indexed creator, address contractAddress);
 
 }

@@ -6,11 +6,12 @@
  * 
  * Made with 🧡 by Kreation.tech
  */
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.9;
 
 import {Clones} from "@openzeppelin/contracts/proxy/Clones.sol";
 import {Counters} from "@openzeppelin/contracts/utils/Counters.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {Address} from "@openzeppelin/contracts/utils/Address.sol";
 
 import "./ISplitter.sol";
 import "./PushSplitter.sol";
@@ -34,7 +35,7 @@ contract SplitterFactory is Ownable {
      * @param implementation ISplitter implementation contract to clone
      */
     function addSplitterType(bytes32 splitterType, address implementation) external onlyOwner {
-        require(Address.isContract(_implementation), "Not a contract");
+        require(Address.isContract(implementation), "Not a contract");
         require(_implementations[splitterType] == address(0x0), "Splitter type already defined");
         _implementations[splitterType] = implementation;
         emit AddedSplitterType(splitterType, msg.sender, implementation);
@@ -51,7 +52,7 @@ contract SplitterFactory is Ownable {
         uint256 id = _counter.current();
         address payable instance = payable(Clones.cloneDeterministic(_implementations[splitterType], bytes32(abi.encodePacked(id))));
         ISplitter(instance).initialize(shares);
-        emit CreatedSplitter(id, msg.sender, instance, splitterType, shares);
+        emit CreatedSplitter(id, splitterType, msg.sender, instance, shares);
         _counter.increment();
         return instance;
     }
@@ -78,12 +79,19 @@ contract SplitterFactory is Ownable {
      * Emitted when a splitter is created.
      * 
      * @param index the identifier of newly created edition
-     * @param creator the edition's owner
-     * @param shares the shares splitting rules 
      * @param splitterType the type of splitter
+     * @param creator the edition's owner
      * @param contractAddress the address of the splitting contract
+     * @param shares the shares splitting rules
      */
-    event CreatedSplitter(uint256 indexed index, address indexed creator, address contractAddress, bytes32 indexed splitterType, ISplitter.Shares[] shares);
+    event CreatedSplitter(uint256 indexed index, bytes32 indexed splitterType, address indexed creator, address contractAddress, ISplitter.Shares[] shares);
 
-    event AddedSplitterType(uint256 indexed id, address indexed creator, address contractAddress);
+    /**
+     * Emitted when a splitter type is added.
+     * 
+     * @param splitterType the type of splitter
+     * @param creator address adding the splitter template
+     * @param contractAddress the address of the splitting contract template
+     */
+     event AddedSplitterType(bytes32 indexed splitterType, address indexed creator, address contractAddress);
 }

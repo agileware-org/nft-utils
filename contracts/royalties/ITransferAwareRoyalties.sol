@@ -6,7 +6,7 @@
  * 
  * Made with 🧡 by Kreation.tech
  */
-pragma solidity 0.8.9;
+pragma solidity ^0.8.9;
 
 import {IRoyalties} from "./IRoyalties.sol";
 

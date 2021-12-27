@@ -6,15 +6,15 @@
  * 
  * Made with 🧡 by Kreation.tech
  */
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.9;
 
-import {Initializable} from "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import {Address} from "@openzeppelin/contracts/utils/Address.sol";
-import {Context} from "@openzeppelin/contracts/utils/Context.sol";
+import {AddressUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
+import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 
 import "./ISplitter.sol";
 
-contract ShakeableSplitter is Initializable, ISplitter, Context  {
+contract ShakeableSplitter is ISplitter, ContextUpgradeable  {
+
     event PaymentFailed(address to);
     event PaymentReleased(address to, uint256 amount);
     event PaymentReceived(address from, uint256 amount);
@@ -74,7 +74,7 @@ contract ShakeableSplitter is Initializable, ISplitter, Context  {
         _released[account] += payment;
         _totalReleased += payment;
 
-        Address.sendValue(account, payment);
+        AddressUpgradeable.sendValue(account, payment);
         emit PaymentReleased(account, payment);
     }
 
@@ -106,5 +106,20 @@ contract ShakeableSplitter is Initializable, ISplitter, Context  {
                 _withdraw(payable(_payees[i]));
             }
         }
+    }
+
+    function withdrawable(address payable account) public view returns(uint256) {
+        require(shares[account] > 0, "Splitter: account has no shares");
+
+        uint256 totalReceived = address(this).balance + totalReleased();
+        return _pendingPayment(account, totalReceived, released(account));
+    }
+
+    function transferTo(address from, address payable to) external {
+        require(shares[from] > 0, "Splitter: no shares to transfer");
+        shares[to] += shares[from];
+        shares[from] = 0;
+        _released[to] += _released[from];
+        _released[from] += 0;
     }
 }

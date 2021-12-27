@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import * as dotenv from "dotenv";
 
 import { HardhatUserConfig, task } from "hardhat/config";
@@ -21,9 +22,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-const INFURA_API_KEY = process.env.INFURA_API_KEY;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
-
 const config: HardhatUserConfig = {
   defaultNetwork: "rinkeby",
   namedAccounts: {
@@ -31,11 +29,11 @@ const config: HardhatUserConfig = {
       default: 0,
       1: "0xDEE48aB42ceEb910c8C61a8966A57Dcf3E8B6706",
       4: "0xDEE48aB42ceEb910c8C61a8966A57Dcf3E8B6706",
-    }
+    },
   },
   solidity: {
     compilers: [{
-      version: "0.8.9",
+      version: "0.8.10",
       settings: {
         optimizer: {
           runs: 200000,
@@ -55,14 +53,14 @@ const config: HardhatUserConfig = {
     },
     localhost: {},
     rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${INFURA_API_KEY}`,
+      url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
       accounts: [process.env.PRIVATE_KEY || ""],
     },
     coverage: {
       url: "http://127.0.0.1:8545", // Coverage launches its own ganache-cli client
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${INFURA_API_KEY}`,
+      url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       gasPrice: 70000000000, // 70 Gwei
       accounts: [process.env.PRIVATE_KEY || ""],
     }
