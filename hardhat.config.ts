@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
 import * as dotenv from "dotenv";
 
 import { HardhatUserConfig, task } from "hardhat/config";
@@ -33,7 +33,7 @@ const config: HardhatUserConfig = {
   },
   solidity: {
     compilers: [{
-      version: "0.8.10",
+      version: "0.8.9",
       settings: {
         optimizer: {
           runs: 200000,

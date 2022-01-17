@@ -15,7 +15,7 @@ import {ContextUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/Cont
 
 import "./ISplitter.sol";
 
-contract PushSplitter is Initializable, ISplitter {
+contract PushSplitter is ISplitter, ContextUpgradeable {
     
     address[] internal _payees;
     mapping(address => uint16) internal _shares;
@@ -55,14 +55,20 @@ contract PushSplitter is Initializable, ISplitter {
         }
     }
 
-    function transferTo(address from, address payable to, uint16 amount) external {
-        require(_shares[from] > 0, "Splitter: no shares to transfer");
-        require(amount == 0 || _shares[from] >= amount, "Splitter: exceeding transfer");
-        uint16 transfer = _shares[from];
+    function transferTo(address payable to) override external {
+        require(_shares[_msgSender()] > 0, "Splitter: no shares to transfer");
+        _shares[to] += _shares[_msgSender()];
+        _shares[_msgSender()] = 0;
+    }
+
+    function transferPartialTo(address payable to, uint16 amount) external {
+        require(_shares[_msgSender()] > 0, "Splitter: no shares to transfer");
+        require(amount == 0 || _shares[_msgSender()] >= amount, "Splitter: exceeding transfer");
+        uint16 transfer = _shares[_msgSender()];
         if (amount > 0 && amount < transfer) {
             transfer = amount;
         }
         _shares[to] += transfer;
-        _shares[from] -= transfer;
+        _shares[_msgSender()] -= transfer;
     }
 }

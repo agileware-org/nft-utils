@@ -1,0 +1,354 @@
+{
+  "address": "0x93368FF9E04bfFB11F93cEB867428FBe221812cC",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "PaymentFailed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentReceived",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentReleased",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address payable",
+              "name": "payee",
+              "type": "address"
+            },
+            {
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct ISplitter.Shares[]",
+          "name": "_shares",
+          "type": "tuple[]"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "released",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "safeShake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "shake",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "shares",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalReleased",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "address payable",
+          "name": "to",
+          "type": "address"
+        }
+      ],
+      "name": "transferTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawable",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xea70cb6710c9230be33a0716d7c42a986e4abb830fa82006d6a71b098061d06c",
+  "receipt": {
+    "to": null,
+    "from": "0xDEE48aB42ceEb910c8C61a8966A57Dcf3E8B6706",
+    "contractAddress": "0x93368FF9E04bfFB11F93cEB867428FBe221812cC",
+    "transactionIndex": 46,
+    "gasUsed": "1054192",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x81b46eb92cd039b307738be04d0ed25e64aea0298aaf8589979de8180979ab97",
+    "transactionHash": "0xea70cb6710c9230be33a0716d7c42a986e4abb830fa82006d6a71b098061d06c",
+    "logs": [],
+    "blockNumber": 9893561,
+    "cumulativeGasUsed": "6818278",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "060bfd410e505c6a7b6baeae41816d77",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"PaymentFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"PaymentReceived\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"PaymentReleased\",\"type\":\"event\"},{\"inputs\":[{\"components\":[{\"internalType\":\"address payable\",\"name\":\"payee\",\"type\":\"address\"},{\"internalType\":\"uint16\",\"name\":\"bps\",\"type\":\"uint16\"}],\"internalType\":\"struct ISplitter.Shares[]\",\"name\":\"_shares\",\"type\":\"tuple[]\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"released\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"safeShake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"shake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"shares\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalReleased\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"transferTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"withdrawable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"released(address)\":{\"details\":\"Getter for the amount of Ether already released to a payee.\"},\"totalReleased()\":{\"details\":\"Getter for the total amount of Ether already released.\"},\"withdraw(address)\":{\"details\":\"Triggers a transfer to `account` of the amount of Ether they are owed, according to their percentage of the total shares and their previous withdrawals.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/splitters/ShakeableSplitter.sol\":\"ShakeableSplitter\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To initialize the implementation contract, you can either invoke the\\n * initializer manually, or you can include a constructor to automatically mark it as initialized when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() initializer {}\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        // If the contract is initializing we ignore whether _initialized is set in order to support multiple\\n        // inheritance patterns, but we only do this in the context of a constructor, because in other contexts the\\n        // contract may have been reentered.\\n        require(_initializing ? _isConstructor() : !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n\\n    /**\\n     * @dev Modifier to protect an initialization function so that it can only be invoked by functions with the\\n     * {initializer} modifier, directly or indirectly.\\n     */\\n    modifier onlyInitializing() {\\n        require(_initializing, \\\"Initializable: contract is not initializing\\\");\\n        _;\\n    }\\n\\n    function _isConstructor() private view returns (bool) {\\n        return !AddressUpgradeable.isContract(address(this));\\n    }\\n}\\n\",\"keccak256\":\"0x68861bcc80cacbd498efde75aab6c74a486cc48262660d326c8d7530d9752097\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Address.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Collection of functions related to the address type\\n */\\nlibrary AddressUpgradeable {\\n    /**\\n     * @dev Returns true if `account` is a contract.\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * It is unsafe to assume that an address for which this function returns\\n     * false is an externally-owned account (EOA) and not a contract.\\n     *\\n     * Among others, `isContract` will return false for the following\\n     * types of addresses:\\n     *\\n     *  - an externally-owned account\\n     *  - a contract in construction\\n     *  - an address where a contract will be created\\n     *  - an address where a contract lived, but was destroyed\\n     * ====\\n     */\\n    function isContract(address account) internal view returns (bool) {\\n        // This method relies on extcodesize, which returns 0 for contracts in\\n        // construction, since the code is only stored at the end of the\\n        // constructor execution.\\n\\n        uint256 size;\\n        assembly {\\n            size := extcodesize(account)\\n        }\\n        return size > 0;\\n    }\\n\\n    /**\\n     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to\\n     * `recipient`, forwarding all available gas and reverting on errors.\\n     *\\n     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\\n     * of certain opcodes, possibly making contracts go over the 2300 gas limit\\n     * imposed by `transfer`, making them unable to receive funds via\\n     * `transfer`. {sendValue} removes this limitation.\\n     *\\n     * https://diligence.consensys.net/posts/2019/09/stop-using-soliditys-transfer-now/[Learn more].\\n     *\\n     * IMPORTANT: because control is transferred to `recipient`, care must be\\n     * taken to not create reentrancy vulnerabilities. Consider using\\n     * {ReentrancyGuard} or the\\n     * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].\\n     */\\n    function sendValue(address payable recipient, uint256 amount) internal {\\n        require(address(this).balance >= amount, \\\"Address: insufficient balance\\\");\\n\\n        (bool success, ) = recipient.call{value: amount}(\\\"\\\");\\n        require(success, \\\"Address: unable to send value, recipient may have reverted\\\");\\n    }\\n\\n    /**\\n     * @dev Performs a Solidity function call using a low level `call`. A\\n     * plain `call` is an unsafe replacement for a function call: use this\\n     * function instead.\\n     *\\n     * If `target` reverts with a revert reason, it is bubbled up by this\\n     * function (like regular Solidity function calls).\\n     *\\n     * Returns the raw returned data. To convert to the expected return value,\\n     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\\n     *\\n     * Requirements:\\n     *\\n     * - `target` must be a contract.\\n     * - calling `target` with `data` must not revert.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionCall(target, data, \\\"Address: low-level call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with\\n     * `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but also transferring `value` wei to `target`.\\n     *\\n     * Requirements:\\n     *\\n     * - the calling contract must have an ETH balance of at least `value`.\\n     * - the called Solidity function must be `payable`.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, value, \\\"Address: low-level call with value failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but\\n     * with `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        require(address(this).balance >= value, \\\"Address: insufficient balance for call\\\");\\n        require(isContract(target), \\\"Address: call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.call{value: value}(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {\\n        return functionStaticCall(target, data, \\\"Address: low-level static call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        require(isContract(target), \\\"Address: static call to non-contract\\\");\\n\\n        (bool success, bytes memory returndata) = target.staticcall(data);\\n        return verifyCallResult(success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Tool to verifies that a low level call was successful, and revert if it wasn't, either by bubbling the\\n     * revert reason using the provided one.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function verifyCallResult(\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal pure returns (bytes memory) {\\n        if (success) {\\n            return returndata;\\n        } else {\\n            // Look for revert reason and bubble it up if present\\n            if (returndata.length > 0) {\\n                // The easiest way to bubble the revert reason is using memory via assembly\\n\\n                assembly {\\n                    let returndata_size := mload(returndata)\\n                    revert(add(32, returndata), returndata_size)\\n                }\\n            } else {\\n                revert(errorMessage);\\n            }\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x3f0f878c796dfc7feba6d3c4e3e526c14c7deae8b7bfc71088e3f38fab0d77b3\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\nimport \\\"../proxy/utils/Initializable.sol\\\";\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract ContextUpgradeable is Initializable {\\n    function __Context_init() internal onlyInitializing {\\n        __Context_init_unchained();\\n    }\\n\\n    function __Context_init_unchained() internal onlyInitializing {\\n    }\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0x0b0d548f6381370d394f7a434f994dc678b3ef3e755de106109d61343a685ea7\",\"license\":\"MIT\"},\"contracts/splitters/ISplitter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\n/**\\r\\n * \\u2591\\u2588\\u2584\\u2591\\u2588\\u2592\\u2588\\u2580\\u2591\\u2580\\u2588\\u2580\\u2591\\u2591\\u2592\\u2588\\u2580\\u2584\\u2592\\u2584\\u2580\\u2584\\u2591\\u2580\\u2584\\u2580\\u2591\\u2588\\u2584\\u2592\\u2584\\u2588\\u2592\\u2588\\u2588\\u2580\\u2591\\u2588\\u2584\\u2591\\u2588\\u2591\\u2580\\u2588\\u2580\\u2591\\u2591\\u2591\\u2584\\u2580\\u2580\\u2592\\u2588\\u2580\\u2584\\u2591\\u2588\\u2592\\u2591\\u2591\\u2588\\u2591\\u2580\\u2588\\u2580\\u2591\\u2580\\u2588\\u2580\\u2592\\u2588\\u2588\\u2580\\u2592\\u2588\\u2580\\u2584\\u2591\\u2584\\u2580\\u2580\\r\\n * \\u2591\\u2588\\u2592\\u2580\\u2588\\u2591\\u2588\\u2580\\u2591\\u2592\\u2588\\u2592\\u2592\\u2591\\u2591\\u2588\\u2580\\u2592\\u2591\\u2588\\u2580\\u2588\\u2591\\u2592\\u2588\\u2592\\u2591\\u2588\\u2592\\u2580\\u2592\\u2588\\u2591\\u2588\\u2584\\u2584\\u2591\\u2588\\u2592\\u2580\\u2588\\u2591\\u2592\\u2588\\u2592\\u2592\\u2591\\u2592\\u2584\\u2588\\u2588\\u2591\\u2588\\u2580\\u2592\\u2592\\u2588\\u2584\\u2584\\u2591\\u2588\\u2591\\u2592\\u2588\\u2592\\u2591\\u2592\\u2588\\u2592\\u2591\\u2588\\u2584\\u2584\\u2591\\u2588\\u2580\\u2584\\u2592\\u2584\\u2588\\u2588\\r\\n * \\r\\n * Made with \\ud83e\\udde1 by Kreation.tech\\r\\n */\\r\\npragma solidity ^0.8.6;\\r\\n\\r\\ninterface ISplitter {\\r\\n    struct Shares {\\r\\n        address payable payee;\\r\\n        uint16 bps;\\r\\n    }\\r\\n    \\r\\n    function initialize(Shares[] memory shares) external;\\r\\n\\r\\n}\",\"keccak256\":\"0x43bf10028dd01719511bd8c133f687d6e8ad5726ab86d7e498a2a98746393c2d\",\"license\":\"MIT\"},\"contracts/splitters/ShakeableSplitter.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\n\\r\\n/**\\r\\n * \\u2591\\u2588\\u2584\\u2591\\u2588\\u2592\\u2588\\u2580\\u2591\\u2580\\u2588\\u2580\\u2591\\u2591\\u2592\\u2588\\u2580\\u2584\\u2592\\u2584\\u2580\\u2584\\u2591\\u2580\\u2584\\u2580\\u2591\\u2588\\u2584\\u2592\\u2584\\u2588\\u2592\\u2588\\u2588\\u2580\\u2591\\u2588\\u2584\\u2591\\u2588\\u2591\\u2580\\u2588\\u2580\\u2591\\u2591\\u2591\\u2584\\u2580\\u2580\\u2592\\u2588\\u2580\\u2584\\u2591\\u2588\\u2592\\u2591\\u2591\\u2588\\u2591\\u2580\\u2588\\u2580\\u2591\\u2580\\u2588\\u2580\\u2592\\u2588\\u2588\\u2580\\u2592\\u2588\\u2580\\u2584\\u2591\\u2584\\u2580\\u2580\\r\\n * \\u2591\\u2588\\u2592\\u2580\\u2588\\u2591\\u2588\\u2580\\u2591\\u2592\\u2588\\u2592\\u2592\\u2591\\u2591\\u2588\\u2580\\u2592\\u2591\\u2588\\u2580\\u2588\\u2591\\u2592\\u2588\\u2592\\u2591\\u2588\\u2592\\u2580\\u2592\\u2588\\u2591\\u2588\\u2584\\u2584\\u2591\\u2588\\u2592\\u2580\\u2588\\u2591\\u2592\\u2588\\u2592\\u2592\\u2591\\u2592\\u2584\\u2588\\u2588\\u2591\\u2588\\u2580\\u2592\\u2592\\u2588\\u2584\\u2584\\u2591\\u2588\\u2591\\u2592\\u2588\\u2592\\u2591\\u2592\\u2588\\u2592\\u2591\\u2588\\u2584\\u2584\\u2591\\u2588\\u2580\\u2584\\u2592\\u2584\\u2588\\u2588\\r\\n * \\r\\n * Made with \\ud83e\\udde1 by Kreation.tech\\r\\n */\\r\\npragma solidity ^0.8.9;\\r\\n\\r\\nimport {AddressUpgradeable} from \\\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\\\";\\r\\nimport {ContextUpgradeable} from \\\"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\\\";\\r\\n\\r\\nimport \\\"./ISplitter.sol\\\";\\r\\n\\r\\ncontract ShakeableSplitter is ISplitter, ContextUpgradeable  {\\r\\n\\r\\n    event PaymentFailed(address to);\\r\\n    event PaymentReleased(address to, uint256 amount);\\r\\n    event PaymentReceived(address from, uint256 amount);\\r\\n\\r\\n    uint256 private _totalReleased;\\r\\n\\r\\n    mapping(address => uint256) private _released;\\r\\n    mapping(address => uint16) public shares;\\r\\n    address[] private _payees;\\r\\n\\r\\n    constructor() initializer { }\\r\\n\\r\\n    function initialize(Shares[] memory _shares) public override initializer {\\r\\n        uint256 totalShares = 0;\\r\\n        for (uint i = 0; i < _shares.length; i++) {\\r\\n            _payees.push(_shares[i].payee);\\r\\n            shares[_shares[i].payee] = _shares[i].bps;\\r\\n            totalShares += _shares[i].bps;\\r\\n        }\\r\\n        require(totalShares == 10_000, \\\"Shares don't sum up to 100%\\\");\\r\\n    }\\r\\n\\r\\n    receive() external payable virtual {\\r\\n        emit PaymentReceived(_msgSender(), msg.value);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Getter for the total amount of Ether already released.\\r\\n     */\\r\\n    function totalReleased() public view returns (uint256) {\\r\\n        return _totalReleased;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Getter for the amount of Ether already released to a payee.\\r\\n     */\\r\\n    function released(address account) public view returns (uint256) {\\r\\n        return _released[account];\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Triggers a transfer to `account` of the amount of Ether they are owed, according to their percentage of the\\r\\n     * total shares and their previous withdrawals.\\r\\n     */\\r\\n    function withdraw(address payable account) public virtual {\\r\\n        _withdraw(account);\\r\\n    }\\r\\n\\r\\n    function _withdraw(address payable account) internal virtual {\\r\\n        require(shares[account] > 0, \\\"Splitter: account has no shares\\\");\\r\\n\\r\\n        uint256 totalReceived = address(this).balance + totalReleased();\\r\\n        uint256 payment = _pendingPayment(account, totalReceived, released(account));\\r\\n\\r\\n        require(payment != 0, \\\"Splitter: account is not due payment\\\");\\r\\n\\r\\n        _released[account] += payment;\\r\\n        _totalReleased += payment;\\r\\n\\r\\n        AddressUpgradeable.sendValue(account, payment);\\r\\n        emit PaymentReleased(account, payment);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev internal logic for computing the pending payment of an `account` given the token historical balances and\\r\\n     * already released amounts.\\r\\n     */\\r\\n    function _pendingPayment(address account, uint256 totalReceived, uint256 alreadyReleased) private view returns (uint256) {\\r\\n        return (totalReceived * shares[account]) / 10_000 - alreadyReleased;\\r\\n    }\\r\\n\\r\\n    function safeShake() external {\\r\\n        uint256 totalReceived = address(this).balance + _totalReleased;\\r\\n        for (uint i = 0; i < _payees.length; i++) {\\r\\n            if(_pendingPayment(_payees[i], totalReceived, _released[_payees[i]]) > 0) {\\r\\n                try this.withdraw(payable(_payees[i])) {\\r\\n                    // do nothing\\r\\n                } catch {\\r\\n                    emit PaymentFailed(_payees[i]);\\r\\n                }\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function shake() external {\\r\\n        uint256 totalReceived = address(this).balance + _totalReleased;\\r\\n        for (uint i = 0; i < _payees.length; i++) {\\r\\n            if(_pendingPayment(_payees[i], totalReceived, _released[_payees[i]]) > 0) {\\r\\n                _withdraw(payable(_payees[i]));\\r\\n            }\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function withdrawable(address payable account) public view returns(uint256) {\\r\\n        require(shares[account] > 0, \\\"Splitter: account has no shares\\\");\\r\\n\\r\\n        uint256 totalReceived = address(this).balance + totalReleased();\\r\\n        return _pendingPayment(account, totalReceived, released(account));\\r\\n    }\\r\\n\\r\\n    function transferTo(address from, address payable to) external {\\r\\n        require(shares[from] > 0, \\\"Splitter: no shares to transfer\\\");\\r\\n        shares[to] += shares[from];\\r\\n        shares[from] = 0;\\r\\n        _released[to] += _released[from];\\r\\n        _released[from] += 0;\\r\\n    }\\r\\n}\",\"keccak256\":\"0x3cbd1319c3f6c8f61c4a52bcaa5deb1a27a0b784fe11448d41cbc56b10839047\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50600054610100900460ff1661002c5760005460ff1615610034565b6100346100d5565b61009b5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840160405180910390fd5b600054610100900460ff161580156100bd576000805461ffff19166101011790555b80156100cf576000805461ff00191690555b506100f6565b60006100ea306100f060201b610a441760201c565b15905090565b3b151590565b6111ba806101056000396000f3fe60806040526004361061009a5760003560e01c80639852595c11610069578063ce513b6f1161004e578063ce513b6f146101d7578063ce7c2ac2146101f7578063e33b7de31461023b57600080fd5b80639852595c14610161578063cb88ac16146101b757600080fd5b80631b5d4ee8146100f55780633b70babb1461010c57806351cff8d91461012c578063825f98d41461014c57600080fd5b366100f0577f6ef95f06320e7a25a04a175ca677b7052bdd97131872c2192525a629f51be770336040805173ffffffffffffffffffffffffffffffffffffffff90921682523460208301520160405180910390a1005b600080fd5b34801561010157600080fd5b5061010a610250565b005b34801561011857600080fd5b5061010a610127366004610e3b565b61043b565b34801561013857600080fd5b5061010a610147366004610e74565b6105e6565b34801561015857600080fd5b5061010a6105f2565b34801561016d57600080fd5b506101a461017c366004610e74565b73ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b6040519081526020015b60405180910390f35b3480156101c357600080fd5b5061010a6101d2366004610f38565b61067e565b3480156101e357600080fd5b506101a46101f2366004610e74565b610960565b34801561020357600080fd5b50610228610212366004610e74565b60356020526000908152604090205461ffff1681565b60405161ffff90911681526020016101ae565b34801561024757600080fd5b506033546101a4565b600060335447610260919061104f565b905060005b6036548110156104375760006103016036838154811061028757610287611067565b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460346000603687815481106102ca576102ca611067565b600091825260208083209091015473ffffffffffffffffffffffffffffffffffffffff168352820192909252604001902054610a4a565b1115610425573073ffffffffffffffffffffffffffffffffffffffff166351cff8d96036838154811061033657610336611067565b60009182526020909120015460405160e083901b7fffffffff0000000000000000000000000000000000000000000000000000000016815273ffffffffffffffffffffffffffffffffffffffff9091166004820152602401600060405180830381600087803b1580156103a857600080fd5b505af19250505080156103b9575060015b610425577f36899e48161ee4504f5f89aa55f7aed73460d464cb62f64e03057df7dbcdd0aa603682815481106103f1576103f1611067565b6000918252602091829020015460405173ffffffffffffffffffffffffffffffffffffffff90911681520160405180910390a15b8061042f81611096565b915050610265565b5050565b73ffffffffffffffffffffffffffffffffffffffff821660009081526035602052604090205461ffff166104d0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206e6f2073686172657320746f207472616e736665720060448201526064015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff8083166000908152603560205260408082205492841682528120805461ffff93841693919291610517918591166110cf565b825461ffff9182166101009390930a92830291909202199091161790555073ffffffffffffffffffffffffffffffffffffffff808316600090815260356020908152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00001690556034909152808220549284168252812080549091906105a490849061104f565b909155505073ffffffffffffffffffffffffffffffffffffffff82166000908152603460205260408120805482906105dd90829061104f565b90915550505050565b6105ef81610aa0565b50565b600060335447610602919061104f565b905060005b6036548110156104375760006106296036838154811061028757610287611067565b111561066c5761066c6036828154811061064557610645611067565b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16610aa0565b8061067681611096565b915050610607565b600054610100900460ff166106995760005460ff161561069d565b303b155b610729576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201527f647920696e697469616c697a656400000000000000000000000000000000000060648201526084016104c7565b600054610100900460ff1615801561076857600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000166101011790555b6000805b83518110156108c157603684828151811061078957610789611067565b6020908102919091018101515182546001810184556000938452919092200180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff90921691909117905583518490829081106107fe576107fe611067565b6020026020010151602001516035600086848151811061082057610820611067565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548161ffff021916908361ffff16021790555083818151811061089257610892611067565b60200260200101516020015161ffff16826108ad919061104f565b9150806108b981611096565b91505061076c565b50806127101461092d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601b60248201527f53686172657320646f6e27742073756d20757020746f2031303025000000000060448201526064016104c7565b50801561043757600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ff1690555050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526035602052604081205461ffff166109f0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206163636f756e7420686173206e6f207368617265730060448201526064016104c7565b60006109fb60335490565b610a05904761104f565b9050610a3d8382610a388673ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b610a4a565b9392505050565b3b151590565b73ffffffffffffffffffffffffffffffffffffffff8316600090815260356020526040812054829061271090610a849061ffff16866110f5565b610a8e9190611132565b610a98919061116d565b949350505050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526035602052604090205461ffff16610b30576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206163636f756e7420686173206e6f207368617265730060448201526064016104c7565b6000610b3b60335490565b610b45904761104f565b90506000610b7a8383610a388673ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b905080610c08576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f53706c69747465723a206163636f756e74206973206e6f74206475652070617960448201527f6d656e740000000000000000000000000000000000000000000000000000000060648201526084016104c7565b73ffffffffffffffffffffffffffffffffffffffff831660009081526034602052604081208054839290610c3d90849061104f565b925050819055508060336000828254610c56919061104f565b90915550610c6690508382610cba565b6040805173ffffffffffffffffffffffffffffffffffffffff85168152602081018390527fdf20fd1e76bc69d672e4814fafb2c449bba3a5369d8359adf9e05e6fde87b056910160405180910390a1505050565b80471015610d24576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064016104c7565b60008273ffffffffffffffffffffffffffffffffffffffff168260405160006040518083038185875af1925050503d8060008114610d7e576040519150601f19603f3d011682016040523d82523d6000602084013e610d83565b606091505b5050905080610e14576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016104c7565b505050565b73ffffffffffffffffffffffffffffffffffffffff811681146105ef57600080fd5b60008060408385031215610e4e57600080fd5b8235610e5981610e19565b91506020830135610e6981610e19565b809150509250929050565b600060208284031215610e8657600080fd5b8135610a3d81610e19565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6040805190810167ffffffffffffffff81118282101715610ee357610ee3610e91565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff81118282101715610f3057610f30610e91565b604052919050565b60006020808385031215610f4b57600080fd5b823567ffffffffffffffff80821115610f6357600080fd5b818501915085601f830112610f7757600080fd5b813581811115610f8957610f89610e91565b610f97848260051b01610ee9565b818152848101925060069190911b830184019087821115610fb757600080fd5b928401925b818410156110155760408489031215610fd55760008081fd5b610fdd610ec0565b8435610fe881610e19565b81528486013561ffff81168114610fff5760008081fd5b8187015283526040939093019291840191610fbc565b979650505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000821982111561106257611062611020565b500190565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156110c8576110c8611020565b5060010190565b600061ffff8083168185168083038211156110ec576110ec611020565b01949350505050565b6000817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff048311821515161561112d5761112d611020565b500290565b600082611168577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b60008282101561117f5761117f611020565b50039056fea2646970667358221220027bf60607f2c4da0f027c709091b14f3ea29afe3311c762ee83583c429896a764736f6c63430008090033",
+  "deployedBytecode": "0x60806040526004361061009a5760003560e01c80639852595c11610069578063ce513b6f1161004e578063ce513b6f146101d7578063ce7c2ac2146101f7578063e33b7de31461023b57600080fd5b80639852595c14610161578063cb88ac16146101b757600080fd5b80631b5d4ee8146100f55780633b70babb1461010c57806351cff8d91461012c578063825f98d41461014c57600080fd5b366100f0577f6ef95f06320e7a25a04a175ca677b7052bdd97131872c2192525a629f51be770336040805173ffffffffffffffffffffffffffffffffffffffff90921682523460208301520160405180910390a1005b600080fd5b34801561010157600080fd5b5061010a610250565b005b34801561011857600080fd5b5061010a610127366004610e3b565b61043b565b34801561013857600080fd5b5061010a610147366004610e74565b6105e6565b34801561015857600080fd5b5061010a6105f2565b34801561016d57600080fd5b506101a461017c366004610e74565b73ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b6040519081526020015b60405180910390f35b3480156101c357600080fd5b5061010a6101d2366004610f38565b61067e565b3480156101e357600080fd5b506101a46101f2366004610e74565b610960565b34801561020357600080fd5b50610228610212366004610e74565b60356020526000908152604090205461ffff1681565b60405161ffff90911681526020016101ae565b34801561024757600080fd5b506033546101a4565b600060335447610260919061104f565b905060005b6036548110156104375760006103016036838154811061028757610287611067565b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168460346000603687815481106102ca576102ca611067565b600091825260208083209091015473ffffffffffffffffffffffffffffffffffffffff168352820192909252604001902054610a4a565b1115610425573073ffffffffffffffffffffffffffffffffffffffff166351cff8d96036838154811061033657610336611067565b60009182526020909120015460405160e083901b7fffffffff0000000000000000000000000000000000000000000000000000000016815273ffffffffffffffffffffffffffffffffffffffff9091166004820152602401600060405180830381600087803b1580156103a857600080fd5b505af19250505080156103b9575060015b610425577f36899e48161ee4504f5f89aa55f7aed73460d464cb62f64e03057df7dbcdd0aa603682815481106103f1576103f1611067565b6000918252602091829020015460405173ffffffffffffffffffffffffffffffffffffffff90911681520160405180910390a15b8061042f81611096565b915050610265565b5050565b73ffffffffffffffffffffffffffffffffffffffff821660009081526035602052604090205461ffff166104d0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206e6f2073686172657320746f207472616e736665720060448201526064015b60405180910390fd5b73ffffffffffffffffffffffffffffffffffffffff8083166000908152603560205260408082205492841682528120805461ffff93841693919291610517918591166110cf565b825461ffff9182166101009390930a92830291909202199091161790555073ffffffffffffffffffffffffffffffffffffffff808316600090815260356020908152604080832080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00001690556034909152808220549284168252812080549091906105a490849061104f565b909155505073ffffffffffffffffffffffffffffffffffffffff82166000908152603460205260408120805482906105dd90829061104f565b90915550505050565b6105ef81610aa0565b50565b600060335447610602919061104f565b905060005b6036548110156104375760006106296036838154811061028757610287611067565b111561066c5761066c6036828154811061064557610645611067565b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16610aa0565b8061067681611096565b915050610607565b600054610100900460ff166106995760005460ff161561069d565b303b155b610729576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201527f647920696e697469616c697a656400000000000000000000000000000000000060648201526084016104c7565b600054610100900460ff1615801561076857600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000166101011790555b6000805b83518110156108c157603684828151811061078957610789611067565b6020908102919091018101515182546001810184556000938452919092200180547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff90921691909117905583518490829081106107fe576107fe611067565b6020026020010151602001516035600086848151811061082057610820611067565b60200260200101516000015173ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548161ffff021916908361ffff16021790555083818151811061089257610892611067565b60200260200101516020015161ffff16826108ad919061104f565b9150806108b981611096565b91505061076c565b50806127101461092d576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601b60248201527f53686172657320646f6e27742073756d20757020746f2031303025000000000060448201526064016104c7565b50801561043757600080547fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00ff1690555050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526035602052604081205461ffff166109f0576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206163636f756e7420686173206e6f207368617265730060448201526064016104c7565b60006109fb60335490565b610a05904761104f565b9050610a3d8382610a388673ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b610a4a565b9392505050565b3b151590565b73ffffffffffffffffffffffffffffffffffffffff8316600090815260356020526040812054829061271090610a849061ffff16866110f5565b610a8e9190611132565b610a98919061116d565b949350505050565b73ffffffffffffffffffffffffffffffffffffffff811660009081526035602052604090205461ffff16610b30576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601f60248201527f53706c69747465723a206163636f756e7420686173206e6f207368617265730060448201526064016104c7565b6000610b3b60335490565b610b45904761104f565b90506000610b7a8383610a388673ffffffffffffffffffffffffffffffffffffffff1660009081526034602052604090205490565b905080610c08576040517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f53706c69747465723a206163636f756e74206973206e6f74206475652070617960448201527f6d656e740000000000000000000000000000000000000000000000000000000060648201526084016104c7565b73ffffffffffffffffffffffffffffffffffffffff831660009081526034602052604081208054839290610c3d90849061104f565b925050819055508060336000828254610c56919061104f565b90915550610c6690508382610cba565b6040805173ffffffffffffffffffffffffffffffffffffffff85168152602081018390527fdf20fd1e76bc69d672e4814fafb2c449bba3a5369d8359adf9e05e6fde87b056910160405180910390a1505050565b80471015610d24576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064016104c7565b60008273ffffffffffffffffffffffffffffffffffffffff168260405160006040518083038185875af1925050503d8060008114610d7e576040519150601f19603f3d011682016040523d82523d6000602084013e610d83565b606091505b5050905080610e14576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016104c7565b505050565b73ffffffffffffffffffffffffffffffffffffffff811681146105ef57600080fd5b60008060408385031215610e4e57600080fd5b8235610e5981610e19565b91506020830135610e6981610e19565b809150509250929050565b600060208284031215610e8657600080fd5b8135610a3d81610e19565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6040805190810167ffffffffffffffff81118282101715610ee357610ee3610e91565b60405290565b604051601f82017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe016810167ffffffffffffffff81118282101715610f3057610f30610e91565b604052919050565b60006020808385031215610f4b57600080fd5b823567ffffffffffffffff80821115610f6357600080fd5b818501915085601f830112610f7757600080fd5b813581811115610f8957610f89610e91565b610f97848260051b01610ee9565b818152848101925060069190911b830184019087821115610fb757600080fd5b928401925b818410156110155760408489031215610fd55760008081fd5b610fdd610ec0565b8435610fe881610e19565b81528486013561ffff81168114610fff5760008081fd5b8187015283526040939093019291840191610fbc565b979650505050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000821982111561106257611062611020565b500190565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052603260045260246000fd5b60007fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8214156110c8576110c8611020565b5060010190565b600061ffff8083168185168083038211156110ec576110ec611020565b01949350505050565b6000817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff048311821515161561112d5761112d611020565b500290565b600082611168577f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b500490565b60008282101561117f5761117f611020565b50039056fea2646970667358221220027bf60607f2c4da0f027c709091b14f3ea29afe3311c762ee83583c429896a764736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "released(address)": {
+        "details": "Getter for the amount of Ether already released to a payee."
+      },
+      "totalReleased()": {
+        "details": "Getter for the total amount of Ether already released."
+      },
+      "withdraw(address)": {
+        "details": "Triggers a transfer to `account` of the amount of Ether they are owed, according to their percentage of the total shares and their previous withdrawals."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 642,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 645,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 1108,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 3564,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "_totalReleased",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 3568,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "_released",
+        "offset": 0,
+        "slot": "52",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 3572,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "shares",
+        "offset": 0,
+        "slot": "53",
+        "type": "t_mapping(t_address,t_uint16)"
+      },
+      {
+        "astId": 3575,
+        "contract": "contracts/splitters/ShakeableSplitter.sol:ShakeableSplitter",
+        "label": "_payees",
+        "offset": 0,
+        "slot": "54",
+        "type": "t_array(t_address)dyn_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_array(t_uint256)50_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_uint16)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint16)",
+        "numberOfBytes": "32",
+        "value": "t_uint16"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint16": {
+        "encoding": "inplace",
+        "label": "uint16",
+        "numberOfBytes": "2"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

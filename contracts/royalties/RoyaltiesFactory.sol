@@ -23,7 +23,7 @@ contract RoyaltiesFactory is OwnableUpgradeable {
     // Counter for last royalties contract id released
     CountersUpgradeable.Counter private _counter;
 
-    // Addresses of implementations of ISplitter contracts to clone
+    // Addresses of implementations of IRoyalties contracts to clone
     mapping(bytes32 => address) private _implementations;
     
     constructor() {
@@ -38,8 +38,8 @@ contract RoyaltiesFactory is OwnableUpgradeable {
      * @param implementation IRoyalties implementation contract to clone
      */
     function addRoyaltiesType(bytes32 royaltiesType, address implementation) external onlyOwner {
-        require(AddressUpgradeable.isContract(implementation), "Mot a contract");
-        require(_implementations[royaltiesType] == address(0x0), "Splitter type already defined");
+        require(AddressUpgradeable.isContract(implementation), "Not a contract");
+        require(_implementations[royaltiesType] == address(0x0), "Royalty type already defined");
         _implementations[royaltiesType] = implementation;
         emit AddedRoyaltiesType(royaltiesType, msg.sender, implementation);
     }

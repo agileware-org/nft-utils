@@ -8,7 +8,9 @@
  */
 pragma solidity ^0.8.6;
 
-interface ISplitter {
+import "../ITransferrable.sol";
+
+interface ISplitter is ITransferrable {
     struct Shares {
         address payable payee;
         uint16 bps;

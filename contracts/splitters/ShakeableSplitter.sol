@@ -28,6 +28,7 @@ contract ShakeableSplitter is ISplitter, ContextUpgradeable  {
     constructor() initializer { }
 
     function initialize(Shares[] memory _shares) public override initializer {
+        require(address(this).balance == 0, "Splitter: stop");
         uint256 totalShares = 0;
         for (uint i = 0; i < _shares.length; i++) {
             _payees.push(_shares[i].payee);
@@ -115,11 +116,11 @@ contract ShakeableSplitter is ISplitter, ContextUpgradeable  {
         return _pendingPayment(account, totalReceived, released(account));
     }
 
-    function transferTo(address from, address payable to) external {
-        require(shares[from] > 0, "Splitter: no shares to transfer");
-        shares[to] += shares[from];
-        shares[from] = 0;
-        _released[to] += _released[from];
-        _released[from] += 0;
+    function transferTo(address payable to) external {
+        require(shares[_msgSender()] > 0, "Splitter: no shares to transfer");
+        shares[to] += shares[_msgSender()];
+        shares[_msgSender()] = 0;
+        _released[to] += _released[_msgSender()];
+        _released[_msgSender()] += 0;
     }
 }
