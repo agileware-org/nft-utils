@@ -32,7 +32,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       console.log("ShakeableSplitter deployed and linked");
 
       writeFileSync("./src/splitters.json", JSON.stringify(splitters, null, 2), { encoding: "utf-8" });
-    } catch (e) { console.log(e) }
+    } catch (e) { console.log(e); }
   }
 };
 export default func;
